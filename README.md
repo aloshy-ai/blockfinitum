@@ -1,13 +1,25 @@
-# Turborepo starter
+# Blockfinitum
 
-This Turborepo starter is maintained by the Turborepo core team.
+This is a Turborepo monorepo using bun as the package manager.
 
-## Using this example
+## Prerequisites
 
-Run the following command:
+- [Node.js](https://nodejs.org/en/) (>=18)
+- [bun](https://bun.sh/) (1.2.8 or compatible)
 
 ```sh
-npx create-turbo@latest
+# Install bun
+curl -fsSL https://bun.sh/install | bash
+```
+
+## Getting Started
+
+Clone the repository and install dependencies:
+
+```sh
+git clone https://github.com/aloshy-ai/blockfinitum.git
+cd blockfinitum
+bun install
 ```
 
 ## What's inside?
@@ -16,11 +28,11 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
-- `blog`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `blog` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- `apps/blog`: a [Next.js](https://nextjs.org/) app
+- `apps/web`: another [Next.js](https://nextjs.org/) app
+- `packages/ui`: a shared React component library (@repo/ui)
+- `packages/eslint-config`: shared ESLint configs (@repo/eslint-config)
+- `packages/typescript-config`: shared TypeScript configs (@repo/typescript-config)
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
@@ -31,23 +43,34 @@ This Turborepo has some additional tools already setup for you:
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
+- [Husky](https://typicode.github.io/husky/) for Git hooks
 
-### Build
+### Commands
 
-To build all apps and packages, run the following command:
+From the root directory, you can run:
 
+```sh
+# Build all apps and packages
+bun build
+
+# Develop all apps and packages
+bun dev
+
+# Run linting
+bun lint
+
+# Format code
+bun format
 ```
-cd my-turborepo
-pnpm build
-```
 
-### Develop
+You can also use Turbo to run commands for specific packages or apps:
 
-To develop all apps and packages, run the following command:
+```sh
+# Run dev for a specific app
+bun dev --filter=web
 
-```
-cd my-turborepo
-pnpm dev
+# Build a specific package
+bun build --filter=@repo/ui
 ```
 
 ### Remote Caching

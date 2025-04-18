@@ -1,20 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/create-next-app).
+# Web App
+
+This is a [Next.js](https://nextjs.org) app within the Blockfinitum monorepo.
 
 ## Getting Started
 
-First, run the development server:
+From the root of the monorepo, you can start just this app:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+bun dev --filter=web
+```
+
+Or from within this directory:
+
+```bash
 bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Features
+
+- Uses shared UI components from `@repo/ui`
+- Configured with shared ESLint rules from `@repo/eslint-config`
+- Configured with shared TypeScript config from `@repo/typescript-config`
+
+## Commands
+
+```bash
+# Run development server
+bun dev
+
+# Build for production
+bun build
+
+# Run type checking
+bun check-types
+
+# Run linting
+bun lint
+```
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
