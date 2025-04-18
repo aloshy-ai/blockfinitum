@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --max-warnings 0",
+    "format": "eslint --fix \"**/*.{js,jsx,ts,tsx}\" && prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
